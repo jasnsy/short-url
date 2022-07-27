@@ -33,8 +33,7 @@ router.post('/', async (req, res) => {
 // @route   GET /api/v1/urls/:code
 router.get('/:code', async (req, res) => {
     try {
-        const result = await ShortUrl.findOne({ code: req.params.code }).lean()
-        console.log('\n\nRESULT\n\n', result);
+        const result = await ShortUrl.findOne({ code: req.params.code }).lean();
 
         res.send(trimResult(result));
     } catch (err) {

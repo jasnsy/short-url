@@ -6,7 +6,6 @@ const Redirect = props => {
 
     const redirectToUrl = async () => {
         const { data } = await axios.get(`http://localhost:5000/api/v1/urls/${code}`);
-        console.log('\n\nDATA\n\n', data)
         window.location.replace(data.longUrl);
 
         return null;
